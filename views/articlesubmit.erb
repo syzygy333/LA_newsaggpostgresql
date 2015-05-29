@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Send Us All Your Articles</title>
+    <link rel="stylesheet" type="text/css" href="/home.css">
+  </head>
+
+  <body>
+    <h3 id="error"> <%= urlerror %> </h3>
+    <h3 id="error"> <%= lengtherror %> </h3>
+    <h1>All the Articles</h1>
+    <h2>Submission page</h2>
+    <form action="/articles" method="post">
+      <label for="article">Title:</label>
+      <input type="text" id="article" name="article" value="<%= fields[0] %>">
+      <br>
+      <label for="url">Link:</label>
+      <input type="url" id="url" name="url" value="<%= fields[1] %>">
+      <br>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" value="<%= fields[2] %>">
+      <br><br>
+      <input type="submit">
+    </form>
+
+
+  </body>
+</html>

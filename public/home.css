@@ -1,0 +1,22 @@
+body {
+  background-color: #EDEDED;
+  margin: 0 20px 0 20px;
+}
+
+h1 {
+  font-family: sans-serif;
+}
+
+h2 {
+  font-family: sans-serif;
+}
+
+#error {
+  color: red;
+}
+
+div {
+  background-color: #D1D1D1;
+  border-bottom: 1px solid #BCBCBC;
+  padding: 10px 10px 10px 10px;
+}

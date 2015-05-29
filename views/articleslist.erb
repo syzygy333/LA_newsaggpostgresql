@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ALL the Articles</title>
+    <link rel="stylesheet" type="text/css" href="/home.css">
+  </head>
+
+  <body>
+    <h1>All the Articles</h1>
+        <% articles.each do |row| %>
+        <div>
+          <%= row["name"] %> </br>
+          <a href="<%= row["url"] %>" target="_blank"> <%= row["url"] %> </a><br>
+          <%= row["description"] %> </br>
+        </div>
+        <% end %>
+    </br>
+
+    <form action="/articles/new">
+        <input type="submit" value="SUBMIT an article">
+    </form>
+  </body>
+</html>
