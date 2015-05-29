@@ -26,15 +26,24 @@ post '/articles' do
       conn.exec_params("INSERT INTO articles (name, url, description) VALUES ($1, $2, $3)", submission)
     end
     redirect '/articles'
+  elsif params["article"].length < 1
+    erb :articlesubmit, locals: {
+      fields: submission,
+      nameerror: "You must provide a title. Please try again.",
+      urlerror: "",
+      lengtherror: ""
+      }
   elsif params["description"].length < 20
     erb :articlesubmit, locals: {
       fields: submission,
+      nameerror: "",
       urlerror: "",
       lengtherror: "That description is too short. Please try again."
       }
   else
     erb :articlesubmit, locals: {
       fields: submission,
+      nameerror: "",
       urlerror: "That URL is invalid. Please try again.",
       lengtherror: ""
       }
@@ -44,6 +53,7 @@ end
 get '/articles/new' do
   erb :articlesubmit, locals: {
     fields: fields,
+    nameerror: "",
     urlerror: "",
     lengtherror: ""
     }
